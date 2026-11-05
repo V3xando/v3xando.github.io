@@ -76,13 +76,13 @@ section[id]{scroll-margin-top:90px}
 .sec-side p{margin:0 0 10px;color:var(--muted);font-size:.92rem}
 
 /* cards */
-.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:36px 32px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 24px}
 .card{display:flex;flex-direction:column;align-items:flex-start}
 .card .img{width:100%;border-radius:8px;overflow:hidden;background:var(--paper);border:1px solid var(--line)}
 .card .img img{width:100%;height:auto;display:block;transition:transform .7s ease}
 .card:hover .img img{transform:scale(1.03)}
 .card .label{margin-top:18px}
-.card h3{font-size:1.6rem;line-height:1.1;margin:6px 0 4px}
+.card h3{font-size:1.3rem;line-height:1.1;margin:6px 0 4px}
 .card .sub{font:600 .6rem var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0}
 .card .circ{margin-top:18px}
 
@@ -135,7 +135,8 @@ section[id]{scroll-margin-top:90px}
 .proj .links a{margin-right:14px}
 
 /* the career as a winding path: an SVG line that draws itself, HTML labels at its stops */
-.journey{position:relative;margin:8px 0 40px;aspect-ratio:1000/420}
+.journey{position:relative;margin:0 0 8px;aspect-ratio:1000/420}
+.journey-label{margin:64px 0 0}
 .journey svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .journey .line{fill:none;stroke:var(--muted);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;opacity:.75}
 .journey .line--next{stroke-dasharray:6 7;opacity:.55}
@@ -199,8 +200,7 @@ dialog::backdrop{background:rgba(30,47,36,.5);backdrop-filter:blur(3px)}
 .print-head{display:none}
 
 @media (max-width:1000px){
-  .cards{grid-template-columns:1fr}
-  .card{max-width:560px}
+  .cards{grid-template-columns:repeat(2,1fr)}
   .side-grid{grid-template-columns:repeat(2,1fr)}
   .about{grid-template-columns:1fr;gap:28px}
   .srow{grid-template-columns:1fr;gap:10px;padding:16px 0}
@@ -225,13 +225,14 @@ dialog::backdrop{background:rgba(30,47,36,.5);backdrop-filter:blur(3px)}
   .strip .lead{max-width:none;margin:0 0 6px;flex-basis:100%}
   .feat{padding:0 16px 0 0;border-left:0}
   .stamp{margin-left:auto}
-  .journey{display:none}
+  .journey,.journey-label{display:none}
   .job summary{grid-template-columns:1fr auto;gap:12px}
   .job .when{grid-column:1/-1;order:3}
   .dlg-in{padding:26px 22px}
 }
 @media (max-width:560px){
-  .cards{gap:28px}
+  .cards{grid-template-columns:1fr;gap:28px}
+  .card{max-width:560px}
   .side-grid{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){
@@ -243,7 +244,7 @@ dialog::backdrop{background:rgba(30,47,36,.5);backdrop-filter:blur(3px)}
   .card .img img,.pcard{transition:none}
 }
 @media print{
-  body::before,.nav,.hero,#work,.strip,footer,dialog,.chip-status,.sec-side,.chev,.proj .links,.pcard .links,.about .btn,.journey{display:none!important}
+  body::before,.nav,.hero,#work,.strip,footer,dialog,.chip-status,.sec-side,.chev,.proj .links,.pcard .links,.about .btn,.journey,.journey-label{display:none!important}
   .reveal{opacity:1!important;transform:none!important}
   body{background:#fff;color:#000;font-size:10.5pt;line-height:1.45}
   .wrap{max-width:none;padding:0}
@@ -377,25 +378,43 @@ dialog::backdrop{background:rgba(30,47,36,.5);backdrop-filter:blur(3px)}
     </div>
     <div class="cards">
       <article class="card reveal">
-        <div class="img"><picture><source media="(max-width:571px)" srcset="assets/work/hamora-compact.png 2x" width="358" height="300"><img src="assets/work/hamora-wide.png" srcset="assets/work/hamora-wide.png 2x" width="560" height="400" alt="hamora-on dashboard: total portfolio value Rp487.250.000 in a pink card, today +0,66%, and a chip showing the IDX market open" loading="lazy"></picture></div>
+        <div class="img"><picture><source media="(min-width:512px) and (max-width:599px)" srcset="assets/work/hamora-wide.png 2x" width="560" height="400"><img src="assets/work/hamora-compact.png" srcset="assets/work/hamora-compact.png 2x" width="358" height="300" alt="hamora-on dashboard: total portfolio value Rp487.250.000 in a pink card, today +0,66%, and a chip showing the IDX market open" loading="lazy"></picture></div>
         <p class="label">Own product · 2026</p><h3>hamora-on</h3><p class="sub">PortfolioOS · React · Node.js · IDX + US</p>
         <a class="circ" href="https://pwmora.com/" target="_blank" rel="noopener" aria-label="Open hamora-on at pwmora.com">↗</a>
       </article>
       <article class="card reveal">
-        <div class="img"><picture><source media="(max-width:571px)" srcset="assets/work/roster-compact.png 2x" width="358" height="300"><img src="assets/work/roster-wide.png" srcset="assets/work/roster-wide.png 2x" width="560" height="400" alt="Checkpoint app on a phone at the Balikpapan mining site: 12 offline reports synced, Pos 3 Gate utara sent at 06:12, and a night-shift card 22:00–06:00 WITA" loading="lazy"></picture></div>
+        <div class="img"><picture><source media="(min-width:512px) and (max-width:599px)" srcset="assets/work/roster-wide.png 2x" width="560" height="400"><img src="assets/work/roster-compact.png" srcset="assets/work/roster-compact.png 2x" width="358" height="300" alt="Checkpoint app on a phone at the Balikpapan mining site: 12 offline reports synced, Pos 3 Gate utara sent at 06:12, and a night-shift card 22:00–06:00 WITA" loading="lazy"></picture></div>
         <p class="label">Freelance · Mining · 2024–2025</p><h3>Security Roster System</h3><p class="sub">.NET · PostgreSQL · React Native</p>
         <button class="circ" data-open="p-roster" aria-label="Details: Security Roster System">→</button>
       </article>
       <article class="card reveal">
-        <div class="img"><picture><source media="(max-width:571px)" srcset="assets/work/reins-compact.png 2x" width="358" height="300"><img src="assets/work/reins-wide.png" srcset="assets/work/reins-wide.png 2x" width="560" height="400" alt="Treaty list in the reinsurance system, with the selected Property Quota Share treaty validated and priced at Rp 10.1 bn" loading="lazy"></picture></div>
+        <div class="img"><picture><source media="(min-width:512px) and (max-width:599px)" srcset="assets/work/reins-wide.png 2x" width="560" height="400"><img src="assets/work/reins-compact.png" srcset="assets/work/reins-compact.png 2x" width="358" height="300" alt="Treaty list in the reinsurance system, with the selected Property Quota Share treaty validated and priced at Rp 10.1 bn" loading="lazy"></picture></div>
         <p class="label">Insurance · 2026</p><h3>Core Reinsurance System</h3><p class="sub">ASP.NET Core · SQL Server</p>
         <button class="circ" data-open="p-reins" aria-label="Details: Core Reinsurance System">→</button>
       </article>
       <article class="card reveal">
-        <div class="img"><picture><source media="(max-width:571px)" srcset="assets/work/credit-compact.png 2x" width="358" height="300"><img src="assets/work/credit-wide.png" srcset="assets/work/credit-wide.png 2x" width="560" height="400" alt="Credit decision list with one application scored 4 of 5 and approved" loading="lazy"></picture></div>
+        <div class="img"><picture><source media="(min-width:512px) and (max-width:599px)" srcset="assets/work/credit-wide.png 2x" width="560" height="400"><img src="assets/work/credit-compact.png" srcset="assets/work/credit-compact.png 2x" width="358" height="300" alt="Credit decision list with one application scored 4 of 5 and approved" loading="lazy"></picture></div>
         <p class="label">Banking · 2023–2024</p><h3>Credit Policy System</h3><p class="sub">Spring Boot · JSP · Oracle</p>
         <button class="circ" data-open="p-credit" aria-label="Details: Credit Policy System">→</button>
       </article>
+    </div>
+    <p class="label journey-label">Career path · pick a stop to open it</p>
+    <div class="journey reveal" id="journey">
+      <svg viewBox="0 0 1000 420" aria-hidden="true" preserveAspectRatio="none">
+        <circle class="ring" cx="130" cy="100" r="12"/>
+        <path class="line line--draw" style="--d:0" d="M130,100 C190,100 230,140 250,150 C290,160 300,110 260,120 C230,128 300,220 330,260"/>
+        <path class="line line--draw" style="--d:1" d="M330,260 C400,250 450,270 470,300 C495,335 545,360 550,320 C555,285 495,265 505,230 C515,205 560,200 600,200"/>
+        <path class="line line--draw" style="--d:2" d="M600,200 C630,190 660,140 690,90"/>
+        <path class="line line--draw" style="--d:3" d="M690,90 C740,70 770,110 755,180 C745,230 720,280 790,300"/>
+        <path class="line line--next" d="M790,300 C805,302 825,294 840,290"/>
+        <path class="line line--draw" style="--d:4" d="M840,290 C880,285 920,330 960,330"/>
+        <circle class="end" cx="960" cy="330" r="4"/>
+      </svg>
+      <a class="stop below" href="#about" style="left:13%;top:27%;--i:0"><b>01</b><span>Institut Teknologi Bandung</span><small>2020 · Postharvest Technology</small></a>
+      <a class="stop below" href="#job-bkt" style="left:33%;top:65%;--i:1"><b>02</b><span>Bersama Kreatif Teknologi</span><small>2021 – 2022 · Software Engineer</small></a>
+      <a class="stop below" href="#job-ming" style="left:60%;top:51%;--i:2"><b>03</b><span>Mitra Inovasi Gemilang</span><small>2022 · IT Supervisor</small></a>
+      <a class="stop above now" href="#job-ikon" style="left:69%;bottom:82%;--i:3"><b>04</b><span>Ikonsultan Inovatama</span><small>2022 – now · Software Engineer</small></a>
+      <a class="stop above" href="#job-roster" style="left:84%;bottom:34%;--i:4"><b>05</b><span>Security Roster System</span><small>2024 – 2025 · Freelance</small></a>
     </div>
   </div>
 </section>
@@ -436,24 +455,7 @@ dialog::backdrop{background:rgba(30,47,36,.5);backdrop-filter:blur(3px)}
   <div class="wrap">
     <div class="sec-head reveal">
       <div><p class="label">Professional Experience</p><h2>Where I've Built</h2></div>
-      <div class="sec-side"><p>Software Engineer with 5+ years of production experience. Repeatedly trusted with sole ownership of business-critical modules. Pick a stop on the path to open it below.</p></div>
-    </div>
-    <div class="journey reveal" id="journey">
-      <svg viewBox="0 0 1000 420" aria-hidden="true" preserveAspectRatio="none">
-        <circle class="ring" cx="130" cy="100" r="12"/>
-        <path class="line line--draw" style="--d:0" d="M130,100 C190,100 230,140 250,150 C290,160 300,110 260,120 C230,128 300,220 330,260"/>
-        <path class="line line--draw" style="--d:1" d="M330,260 C400,250 450,270 470,300 C495,335 545,360 550,320 C555,285 495,265 505,230 C515,205 560,200 600,200"/>
-        <path class="line line--draw" style="--d:2" d="M600,200 C630,190 660,140 690,90"/>
-        <path class="line line--draw" style="--d:3" d="M690,90 C740,70 770,110 755,180 C745,230 720,280 790,300"/>
-        <path class="line line--next" d="M790,300 C805,302 825,294 840,290"/>
-        <path class="line line--draw" style="--d:4" d="M840,290 C880,285 920,330 960,330"/>
-        <circle class="end" cx="960" cy="330" r="4"/>
-      </svg>
-      <a class="stop below" href="#about" style="left:13%;top:27%;--i:0"><b>01</b><span>Institut Teknologi Bandung</span><small>2020 · Postharvest Technology</small></a>
-      <a class="stop below" href="#job-bkt" style="left:33%;top:65%;--i:1"><b>02</b><span>Bersama Kreatif Teknologi</span><small>2021 – 2022 · Software Engineer</small></a>
-      <a class="stop below" href="#job-ming" style="left:60%;top:51%;--i:2"><b>03</b><span>Mitra Inovasi Gemilang</span><small>2022 · IT Supervisor</small></a>
-      <a class="stop above now" href="#job-ikon" style="left:69%;bottom:82%;--i:3"><b>04</b><span>Ikonsultan Inovatama</span><small>2022 – now · Software Engineer</small></a>
-      <a class="stop above" href="#job-roster" style="left:84%;bottom:34%;--i:4"><b>05</b><span>Security Roster System</span><small>2024 – 2025 · Freelance</small></a>
+      <div class="sec-side"><p>Software Engineer with 5+ years of production experience. Repeatedly trusted with sole ownership of business-critical modules.</p></div>
     </div>
     <div class="reveal">
     <details class="job" id="job-ikon" open>
