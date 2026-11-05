@@ -55,6 +55,9 @@
 
   .cr-dot[data-on] { background: var(--ss-accent); }
 
+  /* Neighbors keep the control but not the accent: a filler score in ink */
+  .cr-score[data-filler] .cr-dot[data-on] { background: var(--ss-ink-3); }
+
   /* Narrow: a touch less zoom, so the row stays whole across with the same
      inset each side; the score moves into the loan line */
   & .ss-stage[data-layout="compact"] .cr-zoom {

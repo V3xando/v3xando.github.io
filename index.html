@@ -30,7 +30,7 @@ h1,h2,h3,h4{font-weight:400;font-family:var(--serif);letter-spacing:-.01em;margi
 .btn{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:var(--cream);padding:13px 24px;border-radius:999px;border:1px solid var(--ink);font:600 .8rem var(--sans);text-decoration:none;cursor:pointer;transition:background .25s,color .25s}
 .btn:hover{background:var(--forest)} .btn:hover .ar{transform:translateX(4px)}
 .btn.ghost{background:transparent;color:var(--ink)} .btn.ghost:hover{background:var(--ink);color:var(--cream)}
-.circ{width:42px;height:42px;border-radius:50%;border:1px solid var(--ink);background:transparent;color:var(--ink);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;font:inherit;transition:background .25s,color .25s;padding:0}
+.circ{text-decoration:none;width:42px;height:42px;border-radius:50%;border:1px solid var(--ink);background:transparent;color:var(--ink);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;font:inherit;transition:background .25s,color .25s;padding:0}
 .circ:hover{background:var(--ink);color:var(--cream)}
 .arrow-link{display:inline-flex;gap:10px;align-items:center;font:600 .8rem var(--sans);text-decoration:none}
 .arrow-link:hover .ar{transform:translateX(4px)}
@@ -143,7 +143,7 @@ section[id]{scroll-margin-top:90px}
 .proj .links a{margin-right:14px}
 
 /* side projects */
-.side-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.side-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .pcard{background:var(--paper-2);border:1px solid var(--line);border-radius:10px;padding:22px;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
 .pcard:hover{transform:translateY(-4px);box-shadow:0 18px 32px -20px rgba(30,47,36,.45)}
 .pcard h3{font-size:1.35rem;line-height:1.15}
@@ -377,21 +377,31 @@ dialog::backdrop{background:rgba(30,47,36,.5);backdrop-filter:blur(3px)}
   <div class="wrap">
     <div class="sec-head reveal">
       <div><p class="label">Selected Work</p><h2>Systems That Shipped</h2></div>
-      <div class="sec-side"><p>Four production systems I owned end-to-end for enterprise clients. Tap a card for the details.</p><a class="arrow-link" href="#experience">View Full Timeline <span class="ar">→</span></a></div>
+      <div class="sec-side"><p>A product of my own, a freelance system, and four built for enterprise clients. Tap a card for the details.</p><a class="arrow-link" href="#experience">View Full Timeline <span class="ar">→</span></a></div>
     </div>
     <div class="cards">
+      <article class="card reveal">
+        <div class="img"><picture><source media="(max-width:571px)" srcset="assets/work/hamora-compact.png 2x" width="358" height="280"><img src="assets/work/hamora-wide.png" srcset="assets/work/hamora-wide.png 2x" width="560" height="400" alt="hamora-on dashboard: total portfolio value Rp487.250.000 in a pink card, today +0,66%, and a chip showing the IDX market open" loading="lazy"></picture></div>
+        <p class="label">Own product · 2026</p><h3>hamora-on</h3><p class="sub">PortfolioOS · React · Node.js · IDX + US</p>
+        <a class="circ" href="https://pwmora.com/" target="_blank" rel="noopener" aria-label="Open hamora-on at pwmora.com">↗</a>
+      </article>
+      <article class="card reveal">
+        <div class="img"><picture><source media="(max-width:571px)" srcset="assets/work/roster-compact.png 2x" width="358" height="300"><img src="assets/work/roster-wide.png" srcset="assets/work/roster-wide.png 2x" width="560" height="400" alt="Checkpoint app on a phone at the Balikpapan mining site: 12 offline reports synced, Pos 3 Gate utara sent at 06:12, and a night-shift card 22:00–06:00 WITA" loading="lazy"></picture></div>
+        <p class="label">Freelance · Mining · 2024–2025</p><h3>Security Roster System</h3><p class="sub">.NET · PostgreSQL · React Native</p>
+        <button class="circ" data-open="p-roster" aria-label="Details: Security Roster System">→</button>
+      </article>
       <article class="card reveal">
         <div class="img"><picture><source media="(max-width:571px)" srcset="assets/work/reins-compact.png 2x" width="358" height="300"><img src="assets/work/reins-wide.png" srcset="assets/work/reins-wide.png 2x" width="560" height="400" alt="Treaty list in the reinsurance system, with the selected Property Quota Share treaty validated and priced at Rp 10.1 bn" loading="lazy"></picture></div>
         <p class="label">Insurance · 2026</p><h3>Core Reinsurance System</h3><p class="sub">ASP.NET Core · SQL Server</p>
         <button class="circ" data-open="p-reins" aria-label="Details: Core Reinsurance System">→</button>
       </article>
       <article class="card reveal">
-        <div class="img"><picture><source media="(max-width:571px)" srcset="assets/work/sales-compact.png 2x" width="358" height="300"><img src="assets/work/sales-wide.png" srcset="assets/work/sales-wide.png 2x" width="560" height="400" alt="Sales4U dashboard showing API response time at 0.7 seconds, 65% faster, beside a phone notification that 128 prospects synced" loading="lazy"></picture></div>
+        <div class="img"><picture><source media="(max-width:571px)" srcset="assets/work/sales-compact.png 2x" width="358" height="350"><img src="assets/work/sales-wide.png" srcset="assets/work/sales-wide.png 2x" width="560" height="400" alt="Sales4U dashboard showing API response time at 0.7 seconds, 65% faster, beside a phone notification about a new prospect" loading="lazy"></picture></div>
         <p class="label">Multi finance · 2024–2025</p><h3>Sales4U Application</h3><p class="sub">Spring Boot · React Native · Oracle</p>
         <button class="circ" data-open="p-sales" aria-label="Details: Sales4U Application">→</button>
       </article>
       <article class="card reveal">
-        <div class="img"><picture><source media="(max-width:571px)" srcset="assets/work/mig-compact.png 2x" width="358" height="300"><img src="assets/work/mig-wide.png" srcset="assets/work/mig-wide.png 2x" width="560" height="400" alt="Terminal running the procedure migration to PostgreSQL, with a card showing the nightly batch dropping from 10 h 12 min to 1.8 s" loading="lazy"></picture></div>
+        <div class="img"><picture><source media="(max-width:571px)" srcset="assets/work/mig-compact.png 2x" width="358" height="280"><img src="assets/work/mig-wide.png" srcset="assets/work/mig-wide.png 2x" width="560" height="400" alt="Terminal running the procedure migration to PostgreSQL, with a card showing the nightly batch dropping from 10 h 12 min to 1.8 s" loading="lazy"></picture></div>
         <p class="label">Enterprise · 2024</p><h3>Database Migration</h3><p class="sub">SQL Server → PostgreSQL</p>
         <button class="circ" data-open="p-mig" aria-label="Details: Database Migration">→</button>
       </article>
@@ -521,7 +531,6 @@ dialog::backdrop{background:rgba(30,47,36,.5);backdrop-filter:blur(3px)}
     <div class="side-grid">
       <article class="pcard reveal"><h3>Penumpang TJ</h3><p class="meta">2026 · Next.js · Phaser 3 · TypeScript</p><p data-url="github.com/jflumbansiantar/ini-hanya-simulasi">2D route-puzzle game: ride Transjakarta across a real Jakarta map. 100 missions in 10 chapters, with fares, queues, capacity and traffic incidents.</p><p class="links"><a href="https://github.com/jflumbansiantar/ini-hanya-simulasi">Repository ↗</a></p></article>
       <article class="pcard reveal"><h3>Kucing Mencari Makan</h3><p class="meta">2026 · Android · Kotlin</p><p data-url="private">Photo food journal: circle each plate to cut it into a sticker, auto time from EXIF, and a cat that comments on your meals.</p><p class="links"><span class="private">Private repository</span></p></article>
-      <article class="pcard reveal"><h3>PortfolioOS</h3><p class="meta">2026 · Full-stack JavaScript</p><p data-url="github.com/jflumbansiantar/solid-giggle">Personal finance dashboard for US and IDX holdings: transactions, performance vs S&amp;P 500, double-entry ledger and tax estimates.</p><p class="links"><a href="https://github.com/jflumbansiantar/solid-giggle">Repository ↗</a></p></article>
       <article class="pcard reveal"><h3>Library System (microservices)</h3><p class="meta">2022 · Spring Boot · PostgreSQL · MongoDB</p><p data-url="github.com/library-apps">Upskilled Academy final project: book in/out with user, book and reader services; Docker, AWS EC2/RDS, GitHub Actions.</p><p class="links"><a href="https://github.com/library-apps/user-service">user-service ↗</a><a href="https://github.com/library-apps/Book">Book ↗</a><a href="https://github.com/library-apps/Reader">Reader ↗</a></p></article>
     </div>
   </div>

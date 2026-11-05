@@ -8,15 +8,19 @@ import './reins.css'
 // outside, over filler rows. Real words only on the selected treaty, its
 // neighbors and the premium it prices; bars everywhere else.
 
-const NAV = ['Treaties', 'Cedants', 'Claims', 'Pricing']
+// Two nav words, then bars: the pricing card covers the lower items, and a
+// bar cut by its edge is filler, a word cut by it is a half-word
+const NAV: (string | number)[] = ['Treaties', 'Cedants', 44, 36]
+// Four named treaties (the selected one, its neighbors and one more), and no
+// more bar rows than names; the list runs off the crop
 const ROWS: { selected?: boolean; name?: number | string; amount?: number | string }[] = [
   { name: 'Marine Cargo XL', amount: 'Rp 3.2 bn' },
   { selected: true },
   { name: 'Engineering Surplus', amount: 'Rp 1.9 bn' },
+  { name: 'Fire & Allied Perils', amount: 'Rp 2.4 bn' },
   { name: 96, amount: 38 },
   { name: 72, amount: 48 },
   { name: 84, amount: 40 },
-  { name: 66, amount: 44 },
 ]
 
 export default function Reinsurance() {
@@ -30,7 +34,7 @@ export default function Reinsurance() {
               {NAV.map((label, i) => (
                 <div key={i} className="rn-nav" data-on={i === 0 || undefined}>
                   <Bar w={10} h={10} r={3} tone={i === 0 ? 4 : 3} />
-                  <Text className="rn-nav__label">{label}</Text>
+                  {typeof label === 'string' ? <Text className="rn-nav__label">{label}</Text> : <Bar w={label} h={5} tone={2} />}
                 </div>
               ))}
             </aside>
@@ -38,6 +42,11 @@ export default function Reinsurance() {
               <div className="rn-header">
                 <Text className="rn-title">Treaties</Text>
                 <Bar w={52} h={22} r={6} tone={2} />
+              </div>
+              <div className="rn-tools">
+                <Bar w={layout === 'wide' ? 140 : 104} h={24} r={6} tone={1} shrink={false} />
+                <Bar w={56} h={24} r={12} tone={2} shrink={false} />
+                <Bar w={44} h={24} r={12} tone={2} shrink={false} />
               </div>
               <div className="rn-list">
                 {ROWS.map((row, i) =>

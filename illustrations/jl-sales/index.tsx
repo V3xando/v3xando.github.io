@@ -6,12 +6,15 @@ import './sales.css'
 // The dashboard is pinned top-left and runs off the bottom; the phone (the
 // React Native app the salespeople carry) straddles its right edge over empty
 // margin and placeholder rows, so the response-time figure and its chart stay
-// clear. Real words: the wordmark, the metric, its value, the change, and the
-// notification. Narrow, the phone goes and the window runs off the right.
+// clear. Real words: the wordmark, the metric, its value, the change, and a
+// notification about a prospect, which is what the app is for. Narrow, the
+// sidebar goes, the badge sits under the figure, the chart drops earlier, and
+// the phone keeps its size: a gutter from the top, off the right and bottom.
 
-// Twelve releases of response time, in tenths of a second: the rewrite lands
-// before the phone covers the chart's right third, and the line settles at 0.7 s
+// Response time by release, in tenths of a second: the rewrite lands and the
+// line settles at 0.7 s; narrow, it lands before the phone covers the chart
 const LATENCY = [21, 23, 20, 24, 22, 9, 8, 7, 7, 7, 7, 7]
+const LATENCY_COMPACT = [21, 23, 9, 8, 7, 7, 7, 7, 7, 7, 7, 7]
 
 const ROWS = [
   { name: 74, amount: 40 },
@@ -23,7 +26,7 @@ const ROWS = [
 
 export default function Sales4U() {
   return (
-    <Stage width={560} height={400} compact={{ below: 560, width: 358, height: 300 }} className="look-jl jl-sales">
+    <Stage width={560} height={400} compact={{ below: 560, width: 358, height: 350 }} className="look-jl jl-sales">
       {(_s, _r, layout) => (
         <>
           <Window url="sales4u.app/prospects" className="sl-window">
@@ -41,14 +44,14 @@ export default function Sales4U() {
               <section className="sl-metric">
                 <div className="sl-head">
                   <Text className="sl-label">API response time</Text>
-                  <Bar w={48} h={18} r={5} tone={1} />
+                  {layout === 'wide' && <Bar w={48} h={18} r={5} tone={1} />}
                 </div>
                 <div className="sl-figure">
                   <Text className="sl-total">0.7 s</Text>
                   <Badge tone="success">65% faster</Badge>
                 </div>
                 <Bar w={72} h={5} tone={2} />
-                <Chart data={LATENCY} width={224} height={88} className="sl-chart" />
+                <Chart data={layout === 'wide' ? LATENCY : LATENCY_COMPACT} width={224} height={88} className="sl-chart" />
                 <div className="sl-axis">
                   <Bar w={22} h={4} tone={1} />
                   <Bar w={22} h={4} tone={1} />
@@ -68,14 +71,12 @@ export default function Sales4U() {
             </div>
           </Window>
 
-          {layout === 'wide' && (
-            <Phone width={220} frame="pro" dark wallpaper={WALLPAPER} className="sl-phone">
-              <LockScreen size="satellite" stack="top">
-                {/* The product's own app sends it */}
-                <Notification icon={<Icon name="check" filled size={20} />} title="Sales4U" body="128 prospects synced" />
-              </LockScreen>
-            </Phone>
-          )}
+          <Phone width={220} frame="pro" dark wallpaper={WALLPAPER} className="sl-phone">
+            <LockScreen size="satellite" stack="top">
+              {/* The product's own app sends it, about the thing a salesperson opens it for */}
+              <Notification icon={<Icon name="user" filled size={20} />} title="Sales4U" body="New prospect · Rina Wijaya, Bandung" />
+            </LockScreen>
+          </Phone>
         </>
       )}
     </Stage>

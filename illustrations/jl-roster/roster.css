@@ -1,0 +1,118 @@
+/* All rules belong to this example, including its responsive variants. */
+.jl-roster {
+  & .ss-stage { --gutter: 32px; }
+
+  /* The phone is the hero at true size: a gutter from the top and left, off
+     the bottom; wide enough that the shift card's center sits over it */
+  .rs-phone {
+    position: absolute;
+    top: var(--gutter);
+    left: var(--gutter);
+    box-shadow: var(--ss-shadow-hero);
+  }
+
+  .rs-app {
+    padding: 8px 18px 0;
+  }
+
+  .rs-head {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 6px 0 12px;
+  }
+
+  .rs-title {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--ss-text-strong);
+  }
+
+  .rs-site {
+    font-size: 13px;
+    color: var(--ss-text);
+  }
+
+  /* The sync line: the app's own banner, a quiet success surface */
+  .rs-sync {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 36px;
+    padding: 0 12px;
+    border-radius: 10px;
+    background: var(--ss-success-soft);
+  }
+
+  .rs-sync__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--ss-success);
+  }
+
+  .rs-sync__text {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ss-success-text);
+  }
+
+  .rs-list {
+    margin: 12px -6px 0;
+  }
+
+  .rs-row {
+    border-bottom: 1px solid var(--ss-line-faint);
+  }
+
+  .rs-row__title {
+    color: var(--ss-text-strong);
+    font-weight: 600;
+  }
+
+  .rs-row__time {
+    color: var(--ss-text-faint);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* The satellite: the shift on the site's clock, straddling the phone's
+     right edge over its bezel and filler rows, a gutter from the stage's
+     right and bottom, a level above the phone */
+  .rs-card {
+    position: absolute;
+    right: var(--gutter);
+    bottom: var(--gutter);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 210px;
+    padding: 14px 16px 12px;
+    border-radius: 12px;
+    background: var(--ss-surface);
+    box-shadow: var(--ss-shadow-satellite);
+  }
+
+  .rs-card__label {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--ss-text);
+  }
+
+  .rs-card__value {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--ss-text-strong);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .rs-card__sub {
+    font-size: 11px;
+    color: var(--ss-text-faint);
+  }
+
+  /* Narrow: the phone alone, whole across, off the bottom */
+  & .ss-stage[data-layout="compact"] { --gutter: 16px; }
+}

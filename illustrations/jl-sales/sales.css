@@ -121,10 +121,12 @@
     box-shadow: var(--ss-shadow-satellite), 0 30px 50px -20px rgba(30, 47, 36, 0.35);
   }
 
-  /* Narrow: no phone, no sidebar; the window runs off the right and bottom
-     with the figure, badge and chart whole */
+  /* Narrow (358 × 400, the gold's recipe): no sidebar; the window runs off
+     the right and bottom; the phone keeps its size, whole, a gutter from the
+     right, its top below the figure row so the value and badge stay clear */
   & .ss-stage[data-layout="compact"] { --gutter: 16px; }
   & .ss-stage[data-layout="compact"] .sl-sidebar { display: none; }
-  & .ss-stage[data-layout="compact"] .sl-window { width: 420px; height: 340px; }
+  & .ss-stage[data-layout="compact"] .sl-window { width: 420px; height: 440px; }
   & .ss-stage[data-layout="compact"] .sl-main { padding: 16px 18px; }
+  & .ss-stage[data-layout="compact"] .sl-phone { top: 150px; }
 }

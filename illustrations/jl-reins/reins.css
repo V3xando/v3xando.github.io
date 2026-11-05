@@ -67,6 +67,13 @@
     color: var(--ss-text-strong);
   }
 
+  /* The list's search and filters, as bars */
+  .rn-tools {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
   .rn-list { display: flex; flex-direction: column; }
 
   /* Kit Rows at this list's pitch: a hairline between, the selection inset */
