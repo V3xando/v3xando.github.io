@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Julia Lumbansiantar — Software Developer</title>
-<meta name="description" content="Portfolio and resume of Julia Lumbansiantar, software developer in Jakarta (Java, .NET, Python, NodeJS).">
+<title>Julia Lumbansiantar — Software Engineer</title>
+<meta name="description" content="Portfolio and resume of Julia Lumbansiantar, software engineer in Jakarta: banking, insurance, multi finance and mining systems (Java, .NET, Python).">
 <style>
   :root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#5f6368; --line:#e3e0d8; --accent:#0b6e4f; --card:#fff; }
   @media (prefers-color-scheme: dark) { :root { --bg:#141414; --fg:#ececec; --muted:#a0a0a0; --line:#2c2c2c; --accent:#5fd3a6; --card:#1c1c1c; } }
@@ -28,6 +28,10 @@
   .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; }
   .card p { margin:6px 0 0; font-size:.92rem; }
   .card .links { margin-top:8px; font-size:.88rem; display:flex; gap:12px; flex-wrap:wrap; }
+  .proj { margin:14px 0 0 0; padding-left:14px; border-left:2px solid var(--line); }
+  .proj h4 { margin:0; font-size:.98rem; }
+  .row { display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+  .skills p { margin:4px 0; }
   .private { font-size:.78rem; color:var(--muted); }
   @media print {
     :root { --bg:#fff; --fg:#000; --muted:#444; --line:#bbb; --accent:#000; --card:#fff; }
@@ -44,78 +48,76 @@
 <main>
   <header>
     <h1>Julia Lumbansiantar</h1>
-    <p class="role">Software Developer · Jakarta, Indonesia</p>
+    <p class="role">Software Engineer · South Jakarta, Indonesia</p>
     <div class="contact">
       <a href="mailto:jflumbansiantar@gmail.com">jflumbansiantar@gmail.com</a>
+      <a href="https://www.linkedin.com/in/julialumbansiantar">linkedin.com/in/julialumbansiantar</a>
       <a href="https://github.com/jflumbansiantar">github.com/jflumbansiantar</a>
     </div>
     <div class="actions">
       <button class="btn" onclick="print()">Print / Save as PDF</button>
-      <a class="btn" href="https://github.com/jflumbansiantar/resume-jul/blob/master/Resume%20Julia%202025.pdf">Original resume (PDF)</a>
     </div>
   </header>
 
-  <h2>Summary</h2>
-  <p>An analytical and passionate software developer with 4+ years of experience in code creation and software development. Skilled in multiple programming languages, including Java, Python, NodeJS and .NET. Brings exceptional communication and interpersonal skills, with a nature to continually research and master new concepts.</p>
+  <h2>Professional summary</h2>
+  <p>Software Engineer with 5+ years of production experience delivering systems for enterprise clients across banking, insurance, telecommunications infrastructure, multi finance, and mining. Repeatedly trusted with sole ownership of business-critical modules, including a bank's credit decision and scoring system. Track record of measurable performance engineering: post-migration query runtimes reduced from 10+ hours to seconds, and API response times cut by 65% on systems processing millions of daily records. Began career solely leading a company-wide ERP implementation, including hiring and mentoring.</p>
 
-  <h2>Experience</h2>
+  <h2>Professional experience</h2>
   <div class="item">
-    <h3>Software Developer — PT Ikonsultan Inovatama</h3>
-    <div class="meta">Oct 2022 – Present</div>
-    <ul>
-      <li>Translate design concepts into applications aligned with the business requirements in functional specification documents.</li>
-      <li>Improve application performance through code and query optimization and refactoring.</li>
-      <li>Take part in project planning: scope, timelines, man-days and resources.</li>
-      <li>Run System Integration Tests (SIT) and User Acceptance Tests (UAT) with IT teammates and end-users.</li>
-      <li>Investigate production issues using database logs and debugging, decide whether the cause is data or functionality, and ship the fix.</li>
-      <li>Write technical documentation: application specifications and process documentation.</li>
-    </ul>
-  </div>
-  <div class="item">
-    <h3>IT Supervisor — PT Mitra Inovasi Gemilang</h3>
-    <div class="meta">Mar 2022 – Sep 2022</div>
-    <ul>
-      <li>Organized requirement specifications, data mapping, diagrams and flowcharts to architect systems for the company's needs.</li>
-      <li>Wrote clean, scalable code in Python and JavaScript; analysed and resolved technical and application problems.</li>
-      <li>Ran testing and troubleshooting to meet quality-assurance standards.</li>
-      <li>Oversaw installations, maintenance and upgrades; delegated tasks and planned team schedules.</li>
-      <li>Wrote specifications, user manuals and process documentation.</li>
-    </ul>
+    <div class="row"><h3>PT Ikonsultan Inovatama — Software Engineer</h3><span class="meta">Oct 2022 – Present</span></div>
+    <div class="meta"><i>IT consulting / software development for enterprise clients</i></div>
+    <div class="proj"><div class="row"><h4>Core Reinsurance System</h4><span class="meta">Jan 2026 – Present</span></div>
+      <div class="meta"><i>ASP.NET Core MVC, SQL Server, JavaScript</i></div><ul><li>Develop core modules of an end-to-end reinsurance system for a national reinsurance company: client data ingestion, validation engine, risk calculation, premium pricing, and excess/claim processing.</li><li>Build backend and frontend features using ASP.NET Core MVC and SQL Server; design RESTful APIs and database schemas per business requirements.</li><li>Convert Figma design prototypes into clean, user-friendly web interfaces.</li></ul></div>
+    <div class="proj"><div class="row"><h4>Sales4U Application</h4><span class="meta">Jul 2024 – Dec 2025</span></div>
+      <div class="meta"><i>Java Spring Boot, JSP, JavaScript, React Native, Oracle Database</i></div><ul><li>Developed enhancements to a sales application used by 100+ salespeople across Indonesia, integrating a Java Spring Boot backend with a React Native mobile app and JSP web interface on Oracle Database.</li><li><b>Reduced API response time by 65%</b> by rewriting queries with CTEs, applying strategic indexing, and batching operations, resolving critical timeouts on a system processing millions of daily records.</li><li>Independently investigated and resolved production issues through database log analysis and debugging.</li></ul></div>
+    <div class="proj"><div class="row"><h4>Database Migration</h4><span class="meta">Apr 2024 – Jul 2024</span></div>
+      <div class="meta"><i>SQL Server, PostgreSQL</i></div><ul><li>Migrated 120+ stored procedures and functions from SQL Server to PostgreSQL for a multi-gigabyte production database, within a 6-person team (1 PM, 1 Tech Lead, 4 Developers); personally handled 30+ procedures.</li><li>Independently diagnosed and resolved severe post-migration performance degradation, <b>reducing worst-case query runtimes from 10+ hours to seconds</b> and typical queries from ~10s to ~1s (~90% faster).</li><li>Devised optimization strategies including index redesign, CTE refactoring, and a temporary-index pattern (create, process, drop) for heavy batch operations, using EXPLAIN ANALYZE to pinpoint bottlenecks.</li><li>Shared the optimization approach across the development team under a tight deadline, accelerating the remaining migration work.</li></ul></div>
+    <div class="proj"><div class="row"><h4>Credit Policy System</h4><span class="meta">May 2023 – Apr 2024</span></div>
+      <div class="meta"><i>Java Spring Boot, JSP, Oracle Database</i></div><ul><li>Solely responsible for end-to-end development of a major module within the bank's Credit Policy System, covering loan approval workflows (credit decision), credit scoring (1–5 scale), and reporting features.</li><li>Built the module full-stack using Java Spring Boot and JSP with Oracle Database in a regulated banking environment.</li><li>Developed a daily morning batch scheduler to automatically ingest prospective borrower data, feeding the credit decision pipeline.</li><li>Performed System Integration Testing (SIT) alongside development duties when QA resources were unavailable, safeguarding release quality and timelines.</li></ul></div>
+    <div class="proj"><div class="row"><h4>Marketing Dashboard</h4><span class="meta">Jan 2023 – Apr 2023</span></div>
+      <div class="meta"><i>FastAPI (Python), React.js, MySQL</i></div><ul><li>Owned the entire backend development of a Marketing Dashboard used by FIF branch marketing teams across Indonesia, within a 6-person project team (1 PM, 3 Business Analysts, 1 Frontend Developer).</li><li>Developed and maintained REST APIs using FastAPI (Python) with MySQL on a live production system, covering new feature development, bug fixes, and query optimization.</li><li>Collaborated with 3 Business Analysts to translate client business requirements into technical specifications and production-ready features.</li><li>Supported frontend development (React.js) during peak workload to protect the project timeline, while consistently resolving 20+ development tickets per month.</li></ul></div>
+    <div class="proj"><div class="row"><h4>Procurement System Revamp</h4><span class="meta">Oct 2022 – Dec 2022</span></div>
+      <div class="meta"><i>.NET Framework 4.8, CQRS</i></div><ul><li>Revamped a legacy procurement application to .NET Framework 4.8 within a 3-developer team, implementing a CQRS-based architecture designed by the tech lead.</li><li>Developed assigned features end-to-end (backend and frontend), replicating existing application flows to ensure functional parity with the legacy system.</li></ul></div>
   </div>
   <div class="item">
-    <h3>Software Engineer — PT Bersama Kreatif Teknologi</h3>
-    <div class="meta">May 2021 – Feb 2022</div>
+    <div class="row"><h3>PT Mitra Inovasi Gemilang (MING) — IT Supervisor</h3><span class="meta">Feb 2022 – Sep 2022</span></div>
+    <div class="meta"><i>Advertising &amp; signage production company (billboards, neon box)</i></div>
+    <div class="meta"><i>Technologies: ERPNext, Frappe Framework, Python, JavaScript, MariaDB, Jinja</i></div>
     <ul>
-      <li>Translated design concepts into functional applications.</li>
-      <li>Integrated backend functionality with AI capabilities and frontends for mobile and web.</li>
-      <li>Ran SIT and UAT; owned backend debugging and continuous improvements.</li>
-      <li>Curated training, testing and validation datasets with the AI team.</li>
+      <li>Led the company-wide ERPNext implementation as the sole IT resource: requirement interviews with users and department heads, specifications, data mappings, ERDs, and process flowcharts to define system scope.</li>
+      <li>Implemented, tested, and launched <b>14+ modules across 5 departments</b> (Sales &amp; Marketing, Production, HRGA, Advertising, Finance), serving ~40 daily active users including sales pipeline, production, stock, delivery (BAST), billing, and income projection.</li>
+      <li>Customized ERPNext using Python on the Frappe framework to cover business-specific workflows beyond out-of-the-box features.</li>
+      <li>Built the IT function from scratch: screened candidates, conducted technical interviews and code tests, then supervised and mentored the hired developer through task review, troubleshooting support, and coaching.</li>
     </ul>
+    <div class="links meta"><a href="https://github.com/BERKAT-TEAM/erpnext">erpnext fork</a> · <a href="https://github.com/BERKAT-TEAM/frappe">frappe fork</a></div>
+  </div>
+  <div class="item">
+    <div class="row"><h3>PT Bersama Kreatif Teknologi — Software Engineer</h3><span class="meta">May 2021 – Feb 2022</span></div>
+        <div class="proj"><div class="row"><h4>Cashierless Shop — AI-Powered Automated Transactions (POC)</h4><span class="meta"></span></div>
+      <div class="meta"><i>Node.js, Express.js, PostgreSQL, Redis, PM2</i></div><ul><li>Developed backend services for an AI-powered cashier-less store proof-of-concept under senior developer guidance; performed feature testing and supported the AI team with image labelling for model training.</li></ul></div>
+    <div class="proj"><div class="row"><h4>Cloud Kitchen Delivery Service Application (POC)</h4><span class="meta"></span></div>
+      <div class="meta"><i>Node.js, Express.js, PostgreSQL, PM2</i></div><ul><li>Solely responsible for backend development in a 2-person team (1 backend, 1 mobile), designing APIs and data models by studying existing food delivery products with no formal specifications or tickets.</li></ul></div>
+    <div class="proj"><div class="row"><h4>Seafreshing — Seafood E-Commerce Web App (POC)</h4><span class="meta"></span></div>
+      <div class="meta"><i>Node.js, Express.js, React.js, PostgreSQL</i></div><ul><li>Became the sole remaining developer after team attrition, taking over full stack development of a marketplace-style e-commerce proof-of-concept.</li></ul><div class="meta"><a href="https://github.com/zermiftah/seafreshing">Repository</a></div></div>
+    <div class="proj"><div class="row"><h4>ERPNext Implementation (initiation) — PT Mitra Inovasi Gemilang</h4><span class="meta">from Sep 2021</span></div>
+      <div class="meta"><i>ERPNext</i></div><ul><li>Initiated the ERP implementation for BKT's investor company: conducted fit-gap analysis on ERPNext with the team to determine out-of-the-box adoption versus required customization and began cross-department requirement gathering (continued full-time at MING).</li></ul></div>
   </div>
 
-  <h2>Skills</h2>
-  <div class="tags">
-    <span>Java / Spring Boot</span><span>.NET / ASP.NET</span><span>Python / FastAPI</span><span>NodeJS / Express</span><span>Go</span><span>ReactJS</span><span>Next.js</span><span>Kotlin</span><span>Oracle DB</span><span>PostgreSQL</span><span>MySQL</span><span>SQL Server</span><span>MongoDB</span><span>Docker</span><span>CI/CD</span><span>Postman</span><span>Teamwork</span>
-  </div>
+  <h2>Selected freelance projects</h2>
+    <div class="proj"><div class="row"><h4>Security Roster System — a publicly listed Indonesian mining company (under NDA)</h4><span class="meta">Oct 2024 – Jan 2025</span></div>
+      <div class="meta"><i>.NET, Entity Framework, PostgreSQL, React Native (integration)</i></div><ul><li>Sole backend developer in a 4-person team (1 PM, 1 Tech Lead, 1 Frontend), building a security shift-rostering and checkpoint-reporting system deployed across mining sites throughout Indonesia.</li><li>Designed scheduling and reporting services with multi-timezone support (WIB/WITA/WIT) for accurate shift assignment across sites, serving a React Native mobile app used by field personnel.</li><li>Co-designed the offline-first data flow for low-signal mining locations: checkpoint data queued locally as JSON on the mobile side and synced to the backend once connectivity returned.</li></ul></div>
 
-  <h2>Professional projects</h2>
-  <p class="meta">Client and employer work — source code is confidential.</p>
-  <div class="grid">
-    <div class="card"><h3>Sales Apps</h3><div class="meta">2024 – 2025 · Back End (Java)</div><p>Dashboards, input forms and data batches with Java Spring Boot and NodeJS on OracleDB.</p></div>
-    <div class="card"><h3>Security Web &amp; App</h3><div class="meta">2024 · Back End</div><p>REST APIs with .NET Web API and PostgreSQL.</p></div>
-    <div class="card"><h3>Data Migration</h3><div class="meta">2024 · Back End</div><p>Translated Oracle SQL queries to PostgreSQL, optimized them, and enhanced the ASP.NET code.</p></div>
-    <div class="card"><h3>Credit Policy Dashboard</h3><div class="meta">2023 – 2024 · Full Stack</div><p>Dashboards, input forms and reports with Spring Boot and Java Server Pages (JSP).</p></div>
-    <div class="card"><h3>Marketing Dashboard</h3><div class="meta">2023 · Back End</div><p>FastAPI (Python) back end, ReactJS front end, MySQL.</p></div>
-    <div class="card"><h3>Procurement System</h3><div class="meta">2022 · Back End</div><p>Revamped an existing procurement system on .NET 4.8 and SQL Server.</p></div>
-    <div class="card"><h3>MING ERP System</h3><div class="meta">2021 – 2022 · Supervisor &amp; Engineer</div><p>Company ERP adapted from open-source ERPNext/Frappe: ERD, testing, user training and maintenance.</p>
-      <div class="links"><a href="https://github.com/BERKAT-TEAM/erpnext">erpnext fork</a><a href="https://github.com/BERKAT-TEAM/frappe">frappe fork</a></div></div>
-    <div class="card"><h3>Seafreshing E-commerce</h3><div class="meta">2022 · Supervisor</div><p>Supervised the web app build; wrote the FSD and analysed the business and customer journey. React + Tailwind.</p>
-      <div class="links"><a href="https://github.com/zermiftah/seafreshing">Repository</a></div></div>
-    <div class="card"><h3>Cashierless Shop</h3><div class="meta">2021 · Back End</div><p>AI system and companion app: Python (AI), NodeJS (back end), HTML/CSS, Kotlin (mobile), MySQL, PM2.</p></div>
-    <div class="card"><h3>Cloud Kitchen Delivery</h3><div class="meta">2021 · Software Engineer</div><p>Delivery app for cloud kitchens: NodeJS, Kotlin, MySQL, PM2.</p></div>
+  <h2>Technical skills</h2>
+  <div class="skills">
+    <p><b>Languages:</b> Python, Java, JavaScript, C#, SQL</p>
+    <p><b>Backend:</b> Spring Boot, FastAPI, ASP.NET Core MVC, .NET Framework, Express.js (Node.js), Frappe Framework, Entity Framework</p>
+    <p><b>Frontend:</b> React.js, JSP, JavaScript, HTML/CSS</p>
+    <p><b>Databases:</b> Oracle, SQL Server, PostgreSQL, MySQL, MariaDB, Redis</p>
+    <p><b>Practices &amp; tools:</b> REST API design, database schema design &amp; ERD, query optimization (EXPLAIN ANALYZE, CTEs, indexing), batch schedulers, CQRS, legacy system migration, SIT/QA testing, requirement gathering, Git, PM2, ERPNext, Figma-to-code</p>
   </div>
 
   <h2>Personal &amp; training projects</h2>
+  <p class="meta">Side projects and bootcamp work, with source code.</p>
   <div class="grid">
     <div class="card"><h3>Penumpang TJ</h3><div class="meta">2026 · Next.js, Phaser 3, TypeScript</div><p>2D route-puzzle game: ride Transjakarta across a real Jakarta map — 100 missions in 10 chapters, fares, queues, capacity and traffic incidents.</p>
       <div class="links"><a href="https://github.com/jflumbansiantar/ini-hanya-simulasi">Repository</a></div></div>
@@ -143,7 +145,7 @@
   </div>
 
   <h2>Education</h2>
-  <div class="item"><h3>Bachelor's degree, Postharvest Technology — Bandung Institute of Technology</h3><div class="meta">2020</div></div>
+  <div class="item"><div class="row"><h3>Institut Teknologi Bandung (ITB)</h3><span class="meta">2020</span></div><div class="meta">Bachelor's Degree, Postharvest Technology</div></div>
 
   <h2>Training &amp; courses</h2>
   <div class="item"><h3>Professional Academy: Data Engineer Batch 1 — Digitalent × DQLab</h3><div class="meta">Feb – Mar 2024</div></div>
