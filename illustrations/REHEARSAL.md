@@ -1,73 +1,70 @@
 # Rehearsal: work-card stills
 
-Six stills (no motion), wide 560 × 400 and a compact design each, filmed with
+Four stills (no motion), wide 560 × 400 and compact 358 × 300, filmed with
 `film.mjs --still --gate` at 1280 and 390. Looks: `jl-look/look.css` (the site's
-tokens) for five; `jl-look/hamora.css` (the product's own, read from pwmora.com)
-for hamora-on. Captured: both widths, light only, no states (stills).
+tokens) for three; `jl-look/hamora.css` (the product's own, read from pwmora.com)
+for hamora-on. Captured: both widths, light only, no states (stills). Two more
+scenes (Sales4U, Database Migration) went through the same passes and were then
+dropped from the page; their record is in the git history.
 
-## jl-hamora (560 × 400; 358 × 280)
-Gold: corner-chip (kept: window pinned top-left off the bottom, a chip centered on
-its top-right corner half outside, a level above; changed: the product's look, a
-browser window, the dashboard's pink total, two bar stats, the value chart, a
-market-status chip). Gate: rehearsal passed, both widths.
-Film: `uneven: hm-tick / ss-bar runs into the bottom padding` and `layout: hm-body
-leaves -65px below its last child` → the holdings list runs off the bottom (bleed);
-stands. `tight lines` (bar stat vs real stat) → bar stat's gap matched; cleared.
-`near aligned` (wordmark 14px off the cards' text edge) → wordmark row inset to
-the cards' text edge; cleared.
+## jl-hamora
+Gold: corner-chip (kept: window pinned top-left off the bottom, a chip centered
+on its top-right corner half outside, a level above; changed: the product's look,
+a browser window, realistic fidelity with the dashboard's own stats, a chip with a
+dot per market). Gate: rehearsal passed, both widths.
+Film: `uneven: … runs into the bottom padding`, `layout: hm-body leaves … below
+its last child` → the holdings list runs off the bottom (bleed); stand.
 
-## jl-roster (560 × 400; 358 × 300)
-Gold: phone-touch's phone hero (a gutter from the top and left, off the bottom,
-screen at true size) with a satellite card straddling its right edge over filler
-rows and the bezel. Gate: rehearsal passed, no issues (wide); compact passed with
-`small text: Terkirim at 8.4px` → the badge is dropped in compact; cleared.
-First pass printed `uneven gutters` on the card (its center sat past the phone's
-edge) → phone widened to 400 so the card's center sits over it; cleared.
+## jl-roster
+Gold: phone-touch's phone hero at true size (400 wide, a gutter from the top and
+left, off the bottom) with a satellite card straddling its right edge over filler
+rows and the bezel. Gate: rehearsal passed, no issues, both widths.
 
-## jl-reins (560 × 400; 358 × 300)
+## jl-reins
 Gold: static-card. Gate: rehearsal passed, both widths.
 Film: `lopsided: selected row 14px left / 8px right` → the gold prints the same
 line on its own selected row; stands. `layout: rn-main leaves -48px` → bleed; stands.
 
-## jl-sales (560 × 400; 358 × 350)
-Gold: device-pair. Gate: rehearsal passed, both widths.
-Film: `layout: sl-main leaves -37px / -32px` → bleed; stands. `small text: "now"
-renders at 6.1px` (compact) → the lock screen's own time label at the kit's phone
-size, the same as the gold's at 390; stands.
-
-## jl-mig (560 × 400; 358 × 280)
-Static-card's recipe mirrored with a terminal hero. Gate: rehearsal passed, no
-issues, both widths.
-
-## jl-credit (560 × 400; 358 × 300)
+## jl-credit
 Gold: close-up. Gate: rehearsal passed, no issues, both widths.
 
-## Review 1 (fresh eye, four scenes before hamora and roster existed)
-1. mig-390: terminal ended at 78% with cream under it → compact recomposed: the
-   terminal runs off the bottom, the card straddles its right edge. Fixed.
-2. sales-390 had no phone, empty pane right of the chart → the phone kept at
-   compact (the gold's recipe) in a 358 × 350 stage, the chart's drop moved earlier
-   so it shows beside the phone. Fixed.
-3. mig-1280: bare top-right column, blank pane under the prompt → the output now
-   runs to the crop; the card grew a bars chart of the nights so the column above it
-   is the gold's size. Fixed.
-4. reins-1280: "Claims" half hidden under the card → the third and fourth nav
-   items are bars; a bar cut by the card is filler. Fixed.
-5. sales-1280: the phone was the gold's lock screen with the words swapped → the
-   notification is now about a prospect (what the app is for), its icon the user
-   glyph. Fixed; an app screen at this phone size would draw text under 10px.
-6. credit: the control appeared once → every row carries the score discs; the
-   neighbors' are in ink, only the subject's in the accent. Fixed.
-7. reins-1280: five bar rows under three names → four names, three bars, and a
-   search/filter strip so the list still runs off the crop. Fixed.
-8. mig-1280: blank fifth under the prompt → see 3. Fixed.
-Polish: nothing (4x zooms crisp).
+## Review 1 (fresh eye, the first four scenes)
+mig-390 cream under the terminal; sales-390 without its phone; mig-1280 bare
+column and blank pane; reins "Claims" half under the card; sales phone the gold's
+verbatim; credit control shown once; reins bars outnumbering names. All fixed
+(terminal to the crop with a nights chart, phone kept at compact, nav bars under
+the card, a prospect notification, score discs on every row, four names and a
+filter strip).
 
-## Review 2 (fresh eye, all six final frames)
-Requested; findings and responses are appended when it returns.
+## Review 2 (fresh eye, all six frames)
+1. mig-390 empty terminal under the prompt → short lines to the crop. Fixed (scene
+   later dropped from the page).
+2. roster-1280 card in the bottom quarter, empty column above → the card grew the
+   week strip (what a roster is) and lost the repeated WITA; the column above it is
+   now the gold's size. Fixed.
+3. reins-1280 card in the bottom third → a third bar row; the card centers as the
+   gold's. Fixed.
+4. mig-1280 card low, terminal ending on ✓ → one filler line fewer so the next
+   prompt shows; the card's center matches the gold's proportion (67–70%), so its
+   height stands. Fixed (scene later dropped).
+5. hamora stat cards sliced by the crop → rows reordered and tightened so the crop
+   falls on the holdings list; the compact stage is 300 tall. Fixed.
+6. hamora bars inside the payoff → a named real product: realistic fidelity, its
+   three stats and the subtitle from its landing page. Fixed.
+7. sales "0.7 s" light → 700. Fixed (scene later dropped).
+8. roster focal row's second line a bar → "Budi Santoso · 2 foto"; the site line
+   says "Area tambang". Fixed.
+9. credit dots offset by the chip's width → the neighbors' pill at the badge's
+   width. Fixed.
+10. reins-390 card edge hiding the avatar column → the compact treaty is "Property
+    QS", the card 150 wide ending by the sidebar line, the total smaller so label
+    and value keep their gap. Fixed.
+11. hamora chip, one dot for two markets → a dot per market. Fixed.
+12. sales-390 "now" at 6px → the kit's phone at the gold's own scale; stands.
+Polish: glyphs and strikethrough clean at 4x (reviewer's zooms).
 
 Assumptions: the stills sit on the site's paper card at 1:1 (wide) and 358
 (compact); the page is the ground, so the stage carries no plate.
 Not checked: dark theme (the site has none); motion (stills only); the host page
 between 572 and 999px, where the wide still is shown at 540–560px (0.96–1.0);
-hamora-on's real app screens (only its landing page was read for the look).
+hamora-on's real app screens (its landing page's stats and style were used).

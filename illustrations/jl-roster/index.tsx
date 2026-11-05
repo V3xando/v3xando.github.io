@@ -31,7 +31,7 @@ export default function Roster() {
               <div className="rs-app">
                 <div className="rs-head">
                   <Text className="rs-title">Checkpoint</Text>
-                  <Text className="rs-site">{wide ? 'Balikpapan · WITA' : 'Shift malam · 22:00 – 06:00 WITA'}</Text>
+                  <Text className="rs-site">{wide ? 'Area tambang · WITA' : 'Shift malam · 22:00 – 06:00 WITA'}</Text>
                 </div>
                 <div className="rs-sync">
                   <span className="rs-sync__dot" />
@@ -40,7 +40,7 @@ export default function Roster() {
                 <div className="rs-list">
                   {ROWS.map((row, i) =>
                     row.real ? (
-                      <Row key={i} className="rs-row" lead={<Avatar name="Pos 3" tone="accent" size={32} />} title={<Text className="rs-row__title">Pos 3 · Gate utara</Text>} subtitle={<Bar w={64} h={6} tone={2} />} meta={<Text className="rs-row__time">06:12</Text>}>
+                      <Row key={i} className="rs-row" lead={<Avatar name="Pos 3" tone="accent" size={32} />} title={<Text className="rs-row__title">Pos 3 · Gate utara</Text>} subtitle={<Text className="rs-row__sub">Budi Santoso · 2 foto</Text>} meta={<Text className="rs-row__time">06:12</Text>}>
                         {wide && <Badge tone="success" dot>Terkirim</Badge>}
                       </Row>
                     ) : (
@@ -55,7 +55,11 @@ export default function Roster() {
               <div className="rs-card">
                 <Text className="rs-card__label">Shift malam</Text>
                 <Text className="rs-card__value">22:00 – 06:00</Text>
-                <Text className="rs-card__sub">WITA, waktu lokasi</Text>
+                <div className="rs-week" role="img" aria-label="Shift this week: night, night, day, day, morning, off, off">
+                  {['M', 'M', 'S', 'S', 'P', '–', '–'].map((d, i) => (
+                    <span key={i} className="rs-day" data-on={d === 'M' || undefined}>{d}</span>
+                  ))}
+                </div>
               </div>
             )}
           </>

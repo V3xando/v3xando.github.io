@@ -26,7 +26,9 @@ const ROWS: { selected?: boolean; name?: number | string; amount?: number | stri
 export default function Reinsurance() {
   return (
     <Stage width={560} height={400} compact={{ below: 560, width: 358, height: 300 }} className="look-jl jl-reins">
-      {(_s, _r, layout) => (
+      {(_s, _r, layout) => {
+        const name = layout === 'wide' ? 'Property Quota Share' : 'Property QS'
+        return (
         <>
           <Window url="core-re.app/treaties" className="rn-window">
             <aside className="rn-sidebar">
@@ -51,7 +53,7 @@ export default function Reinsurance() {
               <div className="rn-list">
                 {ROWS.map((row, i) =>
                   row.selected ? (
-                    <Row key={i} pad={0} selected className="rn-row" data-target="selected" lead={<Avatar name="Property Quota Share" tone="accent" size={18} />} title={<Text className="rn-name">Property Quota Share</Text>}>
+                    <Row key={i} pad={0} selected className="rn-row" data-target="selected" lead={<Avatar name={name} tone="accent" size={18} />} title={<Text className="rn-name">{name}</Text>}>
                       <Bar w={40} tone={4} />
                     </Row>
                   ) : (
@@ -68,11 +70,11 @@ export default function Reinsurance() {
             <div className="rn-detail-head">
               {layout === 'wide' && <Avatar name="Property Quota Share" tone="accent" size={26} />}
               <div className="rn-detail-who">
-                <Text className="rn-detail-name">Property Quota Share</Text>
+                <Text className="rn-detail-name">{name}</Text>
                 <Badge tone="success" dot>Validated</Badge>
               </div>
             </div>
-            {[48, 36].map((w, i) => (
+            {[48, 36, 42].map((w, i) => (
               <div key={i} className="rn-detail-row">
                 <Bar w={w} h={5} tone={3} />
                 <Bar w={w - 12} h={5} tone={2} />
@@ -84,7 +86,8 @@ export default function Reinsurance() {
             </div>
           </div>
         </>
-      )}
+        )
+      }}
     </Stage>
   )
 }
