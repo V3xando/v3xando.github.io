@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Bricolage+Grotesque:wght@700;800&display=swap');
+
+/* hamora-on's look (pwmora.com), read from the live site: cream page, warm
+   white cards with a 2px ink border and a hard blue offset shadow, hot pink
+   for the one card that matters, Onest for UI text, Bricolage Grotesque for
+   figures. Sits on the portfolio's paper well like the other stills. */
+.look-hamora .ss-stage {
+  --ss-well: #e9e2d4;
+  --ss-canvas: #f7f3ea;
+  --ss-surface: #fffdf8;
+  --ss-chrome: #fffdf8;
+  --ss-raised: #fffdf8;
+  --ss-line: rgba(21, 19, 26, 0.12);
+  --ss-line-faint: rgba(21, 19, 26, 0.07);
+  --ss-text-strong: #15131a;
+  --ss-text: #4a4650;
+  --ss-text-faint: #8a8690;
+  --ss-icon: #15131a;
+  --ss-accent: #ff3d9a;
+  --ss-accent-soft: rgba(255, 61, 154, 0.16);
+  --ss-font: "Onest", system-ui, -apple-system, sans-serif;
+  --ss-radius-md: 10px;
+  --ss-radius-lg: 14px;
+  --hm-ink: #15131a;
+  --hm-pink: #ff4fa8;
+  --hm-blue: #2f6bff;
+  --hm-green: #11823b;
+  --hm-display: "Bricolage Grotesque", "Onest", system-ui, sans-serif;
+  overflow: hidden;
+  border-radius: 0;
+  background: var(--ss-well);
+}

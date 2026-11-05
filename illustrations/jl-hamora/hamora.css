@@ -1,0 +1,178 @@
+/* All rules belong to this example, including its responsive variants. */
+.jl-hamora {
+  & .ss-stage { --gutter: 36px; }
+
+  /* Pinned top-left, off the bottom; its top-right corner at (436, 52) */
+  .hm-win {
+    position: absolute;
+    top: 52px;
+    left: var(--gutter);
+    width: 400px;
+    height: 420px;
+    box-shadow: var(--ss-shadow-hero);
+  }
+
+  .hm-body {
+    height: 100%;
+    padding: 16px 20px;
+    background: var(--ss-canvas);
+  }
+
+  /* On the cards' text edge (12px padding + 2px border) */
+  .hm-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 14px;
+    margin-bottom: 14px;
+  }
+
+  /* A plain wordmark in the product's display face: no drawn logo */
+  .hm-logo {
+    font-family: var(--hm-display);
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--hm-ink);
+  }
+
+  /* The product's cards: a 2px ink border and a hard blue offset shadow */
+  .hm-total,
+  .hm-stat {
+    border: 2px solid var(--hm-ink);
+    border-radius: 12px;
+    background: var(--ss-surface);
+    box-shadow: 4px 4px 0 var(--hm-blue);
+  }
+
+  .hm-total {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 12px 12px 12px;
+    background: var(--hm-pink);
+  }
+
+  .hm-label {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--hm-ink);
+  }
+
+  .hm-value {
+    font-family: var(--hm-display);
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    color: var(--hm-ink);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .hm-sub {
+    font-size: 10.5px;
+    font-weight: 500;
+    color: var(--hm-ink);
+  }
+
+  .hm-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .hm-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px 12px;
+  }
+
+  /* A placeholder stat keeps the real one's air between its marks */
+  .hm-stat--bars { gap: 11px; padding-top: 12px; padding-bottom: 11px; }
+
+  .hm-stat__value {
+    font-family: var(--hm-display);
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--hm-ink);
+  }
+
+  .hm-up { color: var(--hm-green); }
+
+  .hm-chart {
+    display: block;
+    margin-top: 16px;
+  }
+
+  /* Rows share the cards' text edge (12px padding + 2px border) */
+  .hm-list {
+    margin-top: 14px;
+    padding: 10px 14px 0;
+    border-top: 1px solid var(--ss-line);
+  }
+
+  .hm-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 32px;
+    border-bottom: 1px solid var(--ss-line-faint);
+  }
+
+  /* Tickers are identifiers: the product's mono-ish tile */
+  .hm-tick {
+    flex: none;
+    width: 42px;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--hm-ink);
+  }
+
+  /* The chip: its center on the window's corner, in the product's style */
+  .hm-chip {
+    position: absolute;
+    top: 52px;
+    left: 436px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 12px 6px 10px;
+    border: 2px solid var(--hm-ink);
+    border-radius: 999px;
+    background: var(--ss-surface);
+    box-shadow: 3px 3px 0 var(--hm-blue);
+    translate: -50% -50%;
+    white-space: nowrap;
+  }
+
+  .hm-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--ss-ink-3);
+  }
+
+  .hm-dot--open { background: var(--hm-green); }
+
+  .hm-chip__text {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--hm-ink);
+  }
+
+  /* Narrow (358 × 280): the window a gutter in from the left, its corner
+     pulled in so the chip stays whole; two stats, no chart */
+  & .ss-stage[data-layout="compact"] { --gutter: 16px; }
+  & .ss-stage[data-layout="compact"] .hm-win { top: 40px; width: 270px; height: 320px; }
+  & .ss-stage[data-layout="compact"] .hm-body { padding: 14px 16px; }
+  & .ss-stage[data-layout="compact"] .hm-value { font-size: 22px; }
+  & .ss-stage[data-layout="compact"] .hm-stats { grid-template-columns: repeat(2, 1fr); }
+  & .ss-stage[data-layout="compact"] .hm-chip { top: 40px; left: 286px; }
+}
