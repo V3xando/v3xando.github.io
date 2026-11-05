@@ -31,7 +31,7 @@ export default function CreditPolicy() {
               <div className="cr-list">
                 <Row pad={0} className="cr-row" lead={<Avatar plain size={24} />} title={<Bar w={96} h={8} r={4} tone={3} />} subtitle={<Bar w={132} h={7} r={3.5} tone={2} />}>
                   {wide && <Score n={3} filler />}
-                  <Bar w={64} h={18} r={9} tone={2} />
+                  <Bar w={82} h={20} r={10} tone={2} shrink={false} />
                 </Row>
                 <Row pad={0} className="cr-row" data-target="subject" lead={<Avatar name="Dewi Anggraini" size={24} />} title={<Text className="cr-title">Dewi Anggraini</Text>} subtitle={<Text className="cr-sub">{wide ? 'Rp 250 m · 36 months' : 'Score 4/5 · Rp 250 m'}</Text>}>
                   {wide && <Score n={4} />}
@@ -39,11 +39,11 @@ export default function CreditPolicy() {
                 </Row>
                 <Row pad={0} className="cr-row" lead={<Avatar plain size={24} />} title={<Bar w={120} h={8} r={4} tone={3} />} subtitle={<Bar w={104} h={7} r={3.5} tone={2} />}>
                   {wide && <Score n={2} filler />}
-                  <Bar w={64} h={18} r={9} tone={2} />
+                  <Bar w={82} h={20} r={10} tone={2} shrink={false} />
                 </Row>
                 <Row pad={0} className="cr-row" lead={<Avatar plain size={24} />} title={<Bar w={88} h={8} r={4} tone={3} />} subtitle={<Bar w={140} h={7} r={3.5} tone={2} />}>
                   {wide && <Score n={3} filler />}
-                  <Bar w={64} h={18} r={9} tone={2} />
+                  <Bar w={82} h={20} r={10} tone={2} shrink={false} />
                 </Row>
               </div>
             </Window>

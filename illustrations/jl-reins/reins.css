@@ -181,6 +181,9 @@
   & .ss-stage[data-layout="compact"] .rn-sidebar { width: 100px; padding: 14px 8px; }
   & .ss-stage[data-layout="compact"] .rn-main { padding: 14px 12px; }
   /* The card loses its avatar so the treaty's name fits on one line */
-  & .ss-stage[data-layout="compact"] .rn-detail { width: 176px; }
+  /* Ends by the sidebar line (64 + 100 = 164), inside the list's padding */
+  & .ss-stage[data-layout="compact"] .rn-detail { width: 150px; padding: 12px 14px 8px; }
+  & .ss-stage[data-layout="compact"] .rn-detail-total { font-size: 13px; }
+  & .ss-stage[data-layout="compact"] .rn-detail-label { font-size: 11px; }
   & .ss-stage[data-layout="compact"] .rn-detail-head { padding-bottom: 10px; }
 }

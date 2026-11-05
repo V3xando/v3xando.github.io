@@ -71,6 +71,8 @@
     font-weight: 600;
   }
 
+  .rs-row__sub { color: var(--ss-text); }
+
   .rs-row__time {
     color: var(--ss-text-faint);
     font-variant-numeric: tabular-nums;
@@ -108,9 +110,30 @@
     font-variant-numeric: tabular-nums;
   }
 
-  .rs-card__sub {
-    font-size: 11px;
-    color: var(--ss-text-faint);
+  /* The week as the roster draws it: seven cells, the night shifts lit */
+  .rs-week {
+    display: flex;
+    gap: 4px;
+    margin-top: 6px;
+    padding-top: 10px;
+    border-top: 1px solid var(--ss-line);
+  }
+
+  .rs-day {
+    flex: 1;
+    display: grid;
+    place-items: center;
+    height: 22px;
+    border-radius: 6px;
+    background: var(--ss-ink-1);
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--ss-text);
+  }
+
+  .rs-day[data-on] {
+    background: var(--ss-accent-soft);
+    color: var(--ss-accent-text);
   }
 
   /* Narrow: the phone alone, whole across, off the bottom */
