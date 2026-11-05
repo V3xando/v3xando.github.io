@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+
+/* The portfolio's look mapped to the kit's tokens (references/looks.md): the
+   site's paper card as the well, cream for canvas, warm white surfaces, ink
+   text, terracotta as the one accent, Manrope as the family. Every still of
+   the four systems shares it, so they read as one page's figures. The stage is
+   square-cornered: the host card rounds and clips it. */
+.look-jl .ss-stage {
+  --ss-well: #e9e2d4;
+  --ss-canvas: #f3eee5;
+  --ss-surface: #fdfbf7;
+  --ss-chrome: #fdfbf7;
+  --ss-raised: #ffffff;
+  --ss-line: rgba(30, 47, 36, 0.1);
+  --ss-line-faint: rgba(30, 47, 36, 0.06);
+  --ss-text-strong: #1e2f24;
+  --ss-text: #625f58;
+  --ss-text-faint: #9a958b;
+  --ss-icon: #4a4a46;
+  --ss-icon-faint: #9a958b;
+  --ss-accent: #c9673f;
+  --ss-accent-soft: rgba(201, 103, 63, 0.14);
+  --ss-font: "Manrope", system-ui, -apple-system, sans-serif;
+  --ss-term-bg: #1b2a21;
+  --ss-term-path: #8b9a7a;
+  --ss-term-sigil: #d98a62;
+  --ss-term-ok: #9fd4b0;
+  --ss-term-dim: #7f8c82;
+  overflow: hidden;
+  border-radius: 0;
+  background: var(--ss-well);
+}

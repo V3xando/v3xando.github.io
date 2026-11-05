@@ -1,0 +1,84 @@
+/* All rules belong to this example, including its responsive variants. */
+.jl-mig {
+  & .ss-stage { --gutter: 28px; }
+
+  /* The terminal is the hero: inset a gutter top and left, off the bottom,
+     its right edge well inside so the result card can straddle it */
+  .mg-term {
+    position: absolute;
+    top: var(--gutter);
+    left: var(--gutter);
+    width: 420px;
+    height: 420px;
+    box-shadow: var(--ss-shadow-hero);
+  }
+
+  .mg-term .ss-term {
+    padding: 14px 18px;
+    font-size: 11px;
+    line-height: 1.75;
+  }
+
+  /* The satellite: the payoff, straddling the terminal's right edge about half
+     outside, over its empty lower margin, a gutter from the stage's right and
+     bottom */
+  .mg-card {
+    position: absolute;
+    right: var(--gutter);
+    bottom: var(--gutter);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 190px;
+    padding: 14px 16px 12px;
+    border-radius: 12px;
+    background: var(--ss-surface);
+    box-shadow: var(--ss-shadow-satellite);
+  }
+
+  .mg-card-label {
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--ss-line);
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--ss-text-strong);
+  }
+
+  .mg-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    height: 24px;
+  }
+
+  .mg-row--after { height: 32px; }
+
+  .mg-k {
+    font-size: 11px;
+    color: var(--ss-text);
+  }
+
+  .mg-old {
+    font-size: 12px;
+    color: var(--ss-text-faint);
+    text-decoration: line-through;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .mg-new {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--ss-text-strong);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Narrow: the terminal runs off the right instead of the bottom, fewer
+     lines, and the card straddles its bottom edge about half outside */
+  & .ss-stage[data-layout="compact"] { --gutter: 16px; }
+  & .ss-stage[data-layout="compact"] .mg-term { width: 380px; height: 220px; }
+  & .ss-stage[data-layout="compact"] .mg-term .ss-term { padding: 12px 14px; font-size: 10px; }
+  & .ss-stage[data-layout="compact"] .mg-card { width: 170px; }
+}

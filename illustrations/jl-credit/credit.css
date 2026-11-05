@@ -1,0 +1,67 @@
+/* All rules belong to this example, including its responsive variants. */
+.jl-credit {
+  /* The whole window at 1.4x, inset 28px top and sides, running off the
+     bottom: the subject row is whole across, name, score and decision */
+  .cr-zoom {
+    position: absolute;
+    top: 28px;
+    left: 28px;
+    transform: scale(1.4);
+    transform-origin: 0 0;
+  }
+
+  .cr-win {
+    width: 360px;
+    height: 300px;
+  }
+
+  .cr-list { padding: 6px 16px; }
+
+  .cr-row {
+    /* The kit's row type scale: lines tall enough for Manrope's ascenders */
+    --ss-row-title: 13px;
+    --ss-row-line: 18px;
+    --ss-row-subtitle: 11px;
+    --ss-row-line-2: 16px;
+    padding: 12px 0;
+    border-top: 1px solid var(--ss-line);
+    border-radius: 0;
+  }
+
+  .cr-row:first-child { border-top: 0; }
+
+  .cr-title {
+    color: var(--ss-text-strong);
+    font-weight: 500;
+  }
+
+  .cr-sub { color: var(--ss-text); }
+
+  /* The 1–5 score as the product draws it: five discs, the earned ones in
+     the accent */
+  .cr-score {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-right: 4px;
+  }
+
+  .cr-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--ss-line);
+  }
+
+  .cr-dot[data-on] { background: var(--ss-accent); }
+
+  /* Narrow: a touch less zoom, so the row stays whole across with the same
+     inset each side; the score moves into the loan line */
+  & .ss-stage[data-layout="compact"] .cr-zoom {
+    top: 16px;
+    left: 16px;
+    transform: scale(1.25);
+  }
+
+  & .ss-stage[data-layout="compact"] .cr-win { width: 261px; }
+}
