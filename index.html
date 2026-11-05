@@ -53,15 +53,9 @@ h1,h2,h3,h4{font-weight:400;font-family:var(--serif);letter-spacing:-.01em;margi
 .hero{position:relative;overflow:hidden;min-height:min(92vh,960px);display:grid;grid-template-columns:minmax(300px,44%) 1fr}
 .hero-text{position:relative;z-index:3;padding:10vh 0 0 max(48px,calc((100vw - 1240px)/2 + 48px));max-width:calc(560px + max(0px,(100vw - 1240px)/2))}
 section[id]{scroll-margin-top:90px}
-.slides{display:grid;margin-top:14px}
-.slide{grid-area:1/1;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .7s ease,transform .7s ease,visibility 0s .7s}
-.slide.active{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.slides{margin-top:14px}
 .slide h1{font-size:clamp(3.4rem,7vw,6.3rem);line-height:.95;margin:.22em 0 .32em}
 .slide p{font-size:1.02rem;max-width:34ch;margin:0 0 30px;color:#2a2a28}
-.pager{display:inline-flex;align-items:center;gap:16px;margin-top:54px;padding:8px 10px 8px 16px;border-radius:999px;background:rgba(243,238,229,.88);font:600 .7rem var(--sans);letter-spacing:.16em;color:var(--muted)}
-.pager .sep{width:28px;height:1px;background:var(--muted)}
-.pager .circ{width:34px;height:34px;font-size:.9rem}
-.pager .circ:first-of-type{margin-left:12px}
 .hero-art{position:absolute;inset:0;z-index:1}
 .layer{position:absolute;inset:0;width:100%;height:100%;will-change:transform}
 .layer svg{position:absolute;inset:0;width:100%;height:100%;display:block}
@@ -219,8 +213,7 @@ dialog::backdrop{background:rgba(30,47,36,.5);backdrop-filter:blur(3px)}
   .nav .btn{display:none}
   .hero{display:block;min-height:0}
   .hero-text{padding:36px 16px 0;max-width:none}
-  .pager{margin-top:36px}
-  .hero-art{position:relative;inset:auto;aspect-ratio:1/1.08;margin-top:28px}
+    .hero-art{position:relative;inset:auto;aspect-ratio:1/1.08;margin-top:28px}
   .layer svg{left:-62%;width:162%}
   .sun{left:16%;top:2%;width:52%}
   .script{right:14px;top:57%;font-size:1.8rem}
@@ -247,7 +240,6 @@ dialog::backdrop{background:rgba(30,47,36,.5);backdrop-filter:blur(3px)}
   .journey .line--draw{stroke-dashoffset:0;transition:none}
   .journey .stop{opacity:1;translate:none;transition:none}
   .stamp{animation:none}
-  .slide{transition:none}
   .card .img img,.pcard{transition:none}
 }
 @media print{
@@ -595,23 +587,6 @@ dialog::backdrop{background:rgba(30,47,36,.5);backdrop-filter:blur(3px)}
 (() => {
   const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // hero slider
-  const slides = $$('.slide'); let cur = 0, timer;
-  const go = n => {
-    slides[cur].classList.remove('active'); slides[cur].setAttribute('aria-hidden', 'true');
-    cur = (n + slides.length) % slides.length;
-    slides[cur].classList.add('active'); slides[cur].removeAttribute('aria-hidden');
-    $('#count').textContent = String(cur + 1).padStart(2, '0');
-  };
-  const auto = () => { clearInterval(timer); if (!reduce) timer = setInterval(() => go(cur + 1), 7000); };
-  $('#prev').onclick = () => { go(cur - 1); auto(); };
-  $('#next').onclick = () => { go(cur + 1); auto(); };
-  const ht = $('.hero-text');
-  ht.addEventListener('mouseenter', () => clearInterval(timer));
-  ht.addEventListener('mouseleave', auto);
-  ht.addEventListener('focusin', () => clearInterval(timer));
-  auto();
 
   // parallax on the collage
   const hero = $('.hero'), layers = $$('.hero-art [data-depth]');
