@@ -549,7 +549,7 @@ main>.section{display:none}
   links.addEventListener('click', e => { if (e.target.tagName === 'A') { links.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); } });
 
   // the sections live in a sheet that opens from a polaroid (or any #link to a section)
-  const sheet = $('#sheet'), main = $('main');
+  const sheet = $('#sheet'), main = $('main'), dlg = $('#dlg');
   let homeOf = null;
   const closeSheet = () => { const sec = $('#sheet > .section'); if (sec && homeOf) { main.insertBefore(sec, homeOf); homeOf.parentNode.removeChild(homeOf); homeOf = null; } };
   const openSheet = (id, from) => {
@@ -570,10 +570,8 @@ main>.section{display:none}
   $('#sheetClose').onclick = () => sheet.close();
   sheet.addEventListener('click', e => { if (e.target === sheet) sheet.close(); });
   sheet.addEventListener('close', closeSheet);
-  if (location.hash.length > 1) openSheet(location.hash.slice(1));
 
   // project dialog (content cloned from the timeline, one source of truth)
-  const dlg = $('#dlg');
   const openProj = id => {
     const src = document.getElementById(id); if (!src) return;
     $('#dlgCo').textContent = src.closest('.job').querySelector('summary h3').textContent.replace(/\s+/g, ' ').trim();
@@ -603,6 +601,9 @@ main>.section{display:none}
   let wasOpen = [];
   addEventListener('beforeprint', () => { if (sheet.open) sheet.close(); wasOpen = $$('.job').map(j => j.open); $$('.job').forEach(j => j.open = true); });
   addEventListener('afterprint', () => $$('.job').forEach((j, i) => j.open = wasOpen[i]));
+
+  // a link that carries a section (jflumbansiantar.github.io/#work) opens it, now that everything is wired
+  if (location.hash.length > 1) openSheet(location.hash.slice(1));
 })();
 </script>
 </body>
