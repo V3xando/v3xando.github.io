@@ -56,9 +56,9 @@ section[id]{scroll-margin-top:90px}
 .hero h1{font-size:clamp(3rem,6.2vw,5.4rem);line-height:.95;margin:.25em 0 .35em}
 .hero-text p{font-size:1.02rem;max-width:34ch;margin:0 0 22px;color:#2a2a28}
 .hero .hint{font:500 .85rem var(--sans);color:var(--muted);margin:0}
-.mosaic{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;width:min(100%,540px);padding:14px;margin:0 max(0px,calc((100vw - 1240px)/2)) 0 0;justify-self:end}
+.mosaic{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;width:min(100%,520px);padding:14px;margin:0 max(0px,calc((100vw - 1240px)/2)) 0 0;justify-self:end}
 .tile{position:relative;display:block;padding:5px 5px 16px;background:var(--paper-2);box-shadow:0 1px 0 rgba(30,47,36,.06),0 14px 22px -14px rgba(30,47,36,.55);rotate:var(--r);translate:var(--x) var(--y);z-index:var(--z,1);color:inherit;text-decoration:none;transition:scale .35s ease,rotate .35s ease,box-shadow .35s ease;animation:settle .7s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*28ms)}
-.tile i{display:block;aspect-ratio:.96;background:url(assets/avatar.webp) var(--px) var(--py)/500% 600% no-repeat}
+.tile i{display:block;aspect-ratio:.96;background:url(assets/avatar.webp) var(--px) var(--py)/400% 500% no-repeat}
 .tile[data-tape]::before{content:"";position:absolute;top:-7px;left:50%;width:44px;height:14px;translate:-50% 0;rotate:-4deg;background:rgba(201,103,63,.28);z-index:2}
 .tile:hover,.tile:focus-visible{rotate:0deg;scale:1.07;z-index:9;box-shadow:0 2px 0 rgba(30,47,36,.06),0 28px 36px -18px rgba(30,47,36,.6)}
 .tile.hot{cursor:pointer}
@@ -173,6 +173,13 @@ dialog::backdrop{background:rgba(30,47,36,.5);backdrop-filter:blur(3px)}
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
 .reveal.in{opacity:1;transform:none}
 .print-head{display:none}
+main>.section{display:none}
+#sheet{width:100%;max-width:none;height:100%;max-height:none;margin:0;padding:0;border:0;border-radius:0;background:var(--cream);color:var(--ink);overflow:auto;transform-origin:var(--ox,50%) var(--oy,50%)}
+#sheet[open]{animation:sheet-in .45s cubic-bezier(.2,.8,.2,1)}
+#sheet::backdrop{background:rgba(30,47,36,.35)}
+#sheet .section{padding-bottom:96px}
+.sheet-close{position:sticky;top:16px;float:right;margin:16px 16px 0 0;z-index:5;background:var(--cream)}
+@keyframes sheet-in{from{opacity:0;transform:scale(.25)}}
 
 @media (max-width:1000px){
   .cards{grid-template-columns:1fr}
@@ -188,7 +195,7 @@ dialog::backdrop{background:rgba(30,47,36,.5);backdrop-filter:blur(3px)}
   .menu-btn{display:inline-block}
   .nav .btn{display:none}
   .hero{display:block;min-height:0;padding:36px 16px 8px}
-  .mosaic{width:100%;margin:28px 0 0;padding:10px 14px;gap:7px}
+  .mosaic{width:100%;margin:28px 0 0;padding:10px 14px;gap:2px}
   .tile{padding:4px 4px 11px}
   .note{font-size:1rem;right:-8px;bottom:-8px}
   .note--l{left:-8px}
@@ -209,6 +216,7 @@ dialog::backdrop{background:rgba(30,47,36,.5);backdrop-filter:blur(3px)}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .reveal{opacity:1;transform:none;transition:none}
+  #sheet[open]{animation:none}
   .stamp{animation:none}
   .tile{animation:none}
   .card .img img,.pcard{transition:none}
@@ -216,6 +224,7 @@ dialog::backdrop{background:rgba(30,47,36,.5);backdrop-filter:blur(3px)}
 @media print{
   body::before,.nav,.hero,#work,.strip,footer,dialog,.chip-status,.sec-side,.chev,.proj .links,.pcard .links,.about .btn{display:none!important}
   .reveal{opacity:1!important;transform:none!important}
+  main>.section{display:block!important}
   body{background:#fff;color:#000;font-size:10.5pt;line-height:1.45}
   .wrap{max-width:none;padding:0}
   main{display:flex;flex-direction:column}
@@ -295,39 +304,29 @@ dialog::backdrop{background:rgba(30,47,36,.5);backdrop-filter:blur(3px)}
     <p class="label">Software Engineer · Jakarta</p>
     <h1>Julia<br>Lumbansiantar</h1>
     <p>Enterprise systems for banking, insurance, multi finance and mining. Five years in production, with a habit of making slow things fast.</p>
-    <p class="hint">Pick a polaroid with a note to jump to a section ↘</p>
+    <p class="hint">Pick a polaroid with a note. Everything else lives inside them ↘</p>
   </div>
   <nav class="mosaic" aria-label="Sections, as a wall of polaroids">
-      <span class="tile" aria-hidden="true" style="--i:0;--r:-1.6deg;--x:-2px;--y:1px;--px:0%;--py:0%"><i></i></span>
-      <span class="tile" aria-hidden="true" style="--i:1;--r:-3.8deg;--x:0px;--y:-1px;--px:25%;--py:0%" data-tape=""><i></i></span>
-      <span class="tile" aria-hidden="true" style="--i:2;--r:-4.0deg;--x:0px;--y:-3px;--px:50%;--py:0%"><i></i></span>
-      <span class="tile" aria-hidden="true" style="--i:3;--r:-0.6deg;--x:-3px;--y:-2px;--px:75%;--py:0%"><i></i></span>
-      <a class="tile hot" href="#work" style="--i:4;--r:-0.7deg;--x:2px;--y:-2px;--px:100%;--py:0%;--z:2"><i></i><span class="note">Work</span></a>
-      <span class="tile" aria-hidden="true" style="--i:5;--r:-2.5deg;--x:1px;--y:3px;--px:0%;--py:20%"><i></i></span>
-      <span class="tile" aria-hidden="true" style="--i:6;--r:0.7deg;--x:-1px;--y:3px;--px:25%;--py:20%"><i></i></span>
-      <span class="tile" aria-hidden="true" style="--i:7;--r:-4.1deg;--x:2px;--y:-1px;--px:50%;--py:20%"><i></i></span>
-      <span class="tile" aria-hidden="true" style="--i:8;--r:-3.2deg;--x:-2px;--y:-1px;--px:75%;--py:20%" data-tape=""><i></i></span>
-      <span class="tile" aria-hidden="true" style="--i:9;--r:2.8deg;--x:-2px;--y:0px;--px:100%;--py:20%"><i></i></span>
-      <a class="tile hot" href="#skills" style="--i:10;--r:1.3deg;--x:-1px;--y:0px;--px:0%;--py:40%;--z:2"><i></i><span class="note note--l">Skills</span></a>
-      <span class="tile" aria-hidden="true" style="--i:11;--r:-3.9deg;--x:-3px;--y:-2px;--px:25%;--py:40%"><i></i></span>
-      <span class="tile" aria-hidden="true" style="--i:12;--r:1.6deg;--x:0px;--y:-1px;--px:50%;--py:40%"><i></i></span>
-      <span class="tile" aria-hidden="true" style="--i:13;--r:0.8deg;--x:0px;--y:-1px;--px:75%;--py:40%"><i></i></span>
-      <span class="tile" aria-hidden="true" style="--i:14;--r:2.6deg;--x:1px;--y:-2px;--px:100%;--py:40%"><i></i></span>
-      <span class="tile" aria-hidden="true" style="--i:15;--r:0.7deg;--x:0px;--y:2px;--px:0%;--py:60%"><i></i></span>
-      <span class="tile" aria-hidden="true" style="--i:16;--r:2.1deg;--x:-1px;--y:3px;--px:25%;--py:60%" data-tape=""><i></i></span>
-      <span class="tile" aria-hidden="true" style="--i:17;--r:-3.4deg;--x:0px;--y:2px;--px:50%;--py:60%"><i></i></span>
-      <span class="tile" aria-hidden="true" style="--i:18;--r:-3.1deg;--x:0px;--y:-3px;--px:75%;--py:60%"><i></i></span>
-      <a class="tile hot" href="#experience" style="--i:19;--r:1.5deg;--x:2px;--y:0px;--px:100%;--py:60%;--z:2"><i></i><span class="note">Experience</span></a>
-      <a class="tile hot" href="#side" style="--i:20;--r:3.4deg;--x:-1px;--y:1px;--px:0%;--py:80%;--z:2"><i></i><span class="note note--l">Side Projects</span></a>
-      <span class="tile" aria-hidden="true" style="--i:21;--r:0.8deg;--x:0px;--y:0px;--px:25%;--py:80%"><i></i></span>
-      <span class="tile" aria-hidden="true" style="--i:22;--r:3.1deg;--x:3px;--y:0px;--px:50%;--py:80%"><i></i></span>
-      <span class="tile" aria-hidden="true" style="--i:23;--r:1.5deg;--x:-3px;--y:1px;--px:75%;--py:80%"><i></i></span>
-      <span class="tile" aria-hidden="true" style="--i:24;--r:1.3deg;--x:3px;--y:2px;--px:100%;--py:80%"><i></i></span>
-      <span class="tile" aria-hidden="true" style="--i:25;--r:-1.9deg;--x:-1px;--y:1px;--px:0%;--py:100%"><i></i></span>
-      <span class="tile" aria-hidden="true" style="--i:26;--r:-4.3deg;--x:0px;--y:-2px;--px:25%;--py:100%"><i></i></span>
-      <a class="tile hot" href="#about" style="--i:27;--r:-3.4deg;--x:-3px;--y:2px;--px:50%;--py:100%;--z:2"><i></i><span class="note">About</span></a>
-      <span class="tile" aria-hidden="true" style="--i:28;--r:-3.3deg;--x:-2px;--y:-1px;--px:75%;--py:100%"><i></i></span>
-      <span class="tile" aria-hidden="true" style="--i:29;--r:3.3deg;--x:-3px;--y:0px;--px:100%;--py:100%" data-tape=""><i></i></span>
+      <span class="tile" aria-hidden="true" style="--i:0;--r:-0.5deg;--x:0px;--y:3px;--px:0.0%;--py:0%"><i></i></span>
+      <span class="tile" aria-hidden="true" style="--i:1;--r:-0.3deg;--x:0px;--y:1px;--px:33.33%;--py:0%" data-tape=""><i></i></span>
+      <span class="tile" aria-hidden="true" style="--i:2;--r:-3.2deg;--x:0px;--y:1px;--px:66.67%;--py:0%"><i></i></span>
+      <a class="tile hot" href="#work" style="--i:3;--r:2.9deg;--x:-3px;--y:-2px;--px:100.0%;--py:0%;--z:2"><i></i><span class="note">Work</span></a>
+      <a class="tile hot" href="#skills" style="--i:4;--r:-4.1deg;--x:2px;--y:2px;--px:0.0%;--py:25%;--z:2"><i></i><span class="note note--l">Skills</span></a>
+      <span class="tile" aria-hidden="true" style="--i:5;--r:-4.6deg;--x:4px;--y:4px;--px:33.33%;--py:25%"><i></i></span>
+      <span class="tile" aria-hidden="true" style="--i:6;--r:1.5deg;--x:1px;--y:-3px;--px:66.67%;--py:25%"><i></i></span>
+      <span class="tile" aria-hidden="true" style="--i:7;--r:-4.8deg;--x:0px;--y:-4px;--px:100.0%;--py:25%"><i></i></span>
+      <span class="tile" aria-hidden="true" style="--i:8;--r:-3.1deg;--x:-2px;--y:-4px;--px:0.0%;--py:50%"><i></i></span>
+      <span class="tile" aria-hidden="true" style="--i:9;--r:-0.4deg;--x:0px;--y:3px;--px:33.33%;--py:50%" data-tape=""><i></i></span>
+      <span class="tile" aria-hidden="true" style="--i:10;--r:0.2deg;--x:1px;--y:0px;--px:66.67%;--py:50%"><i></i></span>
+      <a class="tile hot" href="#experience" style="--i:11;--r:1.6deg;--x:0px;--y:-2px;--px:100.0%;--py:50%;--z:2"><i></i><span class="note">Experience</span></a>
+      <a class="tile hot" href="#side" style="--i:12;--r:5.0deg;--x:4px;--y:3px;--px:0.0%;--py:75%;--z:2"><i></i><span class="note note--l">Side Projects</span></a>
+      <span class="tile" aria-hidden="true" style="--i:13;--r:2.1deg;--x:-1px;--y:-2px;--px:33.33%;--py:75%"><i></i></span>
+      <span class="tile" aria-hidden="true" style="--i:14;--r:-2.1deg;--x:-3px;--y:2px;--px:66.67%;--py:75%"><i></i></span>
+      <span class="tile" aria-hidden="true" style="--i:15;--r:-1.0deg;--x:3px;--y:-1px;--px:100.0%;--py:75%"><i></i></span>
+      <span class="tile" aria-hidden="true" style="--i:16;--r:4.6deg;--x:3px;--y:-4px;--px:0.0%;--py:100%"><i></i></span>
+      <span class="tile" aria-hidden="true" style="--i:17;--r:-2.9deg;--x:3px;--y:0px;--px:33.33%;--py:100%"><i></i></span>
+      <a class="tile hot" href="#about" style="--i:18;--r:4.8deg;--x:-1px;--y:-3px;--px:66.67%;--py:100%;--z:2"><i></i><span class="note">About</span></a>
+      <span class="tile" aria-hidden="true" style="--i:19;--r:1.3deg;--x:2px;--y:-2px;--px:100.0%;--py:100%" data-tape=""><i></i></span>
   </nav>
 </section>
 
@@ -362,7 +361,7 @@ dialog::backdrop{background:rgba(30,47,36,.5);backdrop-filter:blur(3px)}
   </div>
 </section>
 
-<div class="strip reveal">
+<div class="strip reveal" hidden>
   <div class="wrap">
     <p class="lead">A cleaner way<br>to build software.</p>
     <div class="feat"><svg viewBox="0 0 28 28"><path d="M4 22 L11 14 L16 18 L24 8"/><path d="M19 8 H24 V13"/></svg><span>Measurable<br>results</span></div>
@@ -517,6 +516,8 @@ dialog::backdrop{background:rgba(30,47,36,.5);backdrop-filter:blur(3px)}
   </div>
 </footer>
 
+<dialog id="sheet" aria-label="Section"><button class="circ sheet-close" id="sheetClose" aria-label="Close">×</button></dialog>
+
 <dialog id="dlg" aria-labelledby="dlgTitle">
   <div class="dlg-in">
     <p class="label" id="dlgCo"></p>
@@ -540,12 +541,36 @@ dialog::backdrop{background:rgba(30,47,36,.5);backdrop-filter:blur(3px)}
   // active nav link
   const navLinks = $$('.links a');
   const so = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id)); }), { rootMargin: '-40% 0px -55%' });
-  $$('main section[id]').forEach(s => so.observe(s));
+  so.observe($('.hero'));
 
   // mobile menu
   const menuBtn = $('#menuBtn'), links = $('#links');
   menuBtn.onclick = () => { const open = links.classList.toggle('open'); menuBtn.setAttribute('aria-expanded', open); };
   links.addEventListener('click', e => { if (e.target.tagName === 'A') { links.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); } });
+
+  // the sections live in a sheet that opens from a polaroid (or any #link to a section)
+  const sheet = $('#sheet'), main = $('main');
+  let homeOf = null;
+  const closeSheet = () => { const sec = $('#sheet > .section'); if (sec && homeOf) { main.insertBefore(sec, homeOf); homeOf.parentNode.removeChild(homeOf); homeOf = null; } };
+  const openSheet = (id, from) => {
+    const sec = document.getElementById(id); if (!sec || !sec.classList.contains('section')) return;
+    if (dlg.open) dlg.close();
+    closeSheet();
+    homeOf = document.createElement('template'); main.insertBefore(homeOf, sec);
+    sheet.append(sec); sec.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+    if (from) { const r = from.getBoundingClientRect(); sheet.style.setProperty('--ox', (r.left + r.width / 2) + 'px'); sheet.style.setProperty('--oy', (r.top + r.height / 2) + 'px'); }
+    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+    if (!sheet.open) sheet.showModal(); sheet.scrollTop = 0;
+  };
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="#"]'); if (!a) return;
+    const sec = document.getElementById(a.getAttribute('href').slice(1));
+    if (sec && sec.classList.contains('section')) { e.preventDefault(); openSheet(sec.id, a.closest('.tile') || a); }
+  });
+  $('#sheetClose').onclick = () => sheet.close();
+  sheet.addEventListener('click', e => { if (e.target === sheet) sheet.close(); });
+  sheet.addEventListener('close', closeSheet);
+  if (location.hash.length > 1) openSheet(location.hash.slice(1));
 
   // project dialog (content cloned from the timeline, one source of truth)
   const dlg = $('#dlg');
@@ -553,7 +578,7 @@ dialog::backdrop{background:rgba(30,47,36,.5);backdrop-filter:blur(3px)}
     const src = document.getElementById(id); if (!src) return;
     $('#dlgCo').textContent = src.closest('.job').querySelector('summary h3').textContent.replace(/\s+/g, ' ').trim();
     $('#dlgBody').innerHTML = src.innerHTML;
-    $('#dlgJump').onclick = () => { dlg.close(); src.closest('.job').open = true; src.scrollIntoView({ block: 'center' }); };
+    $('#dlgJump').onclick = () => { dlg.close(); openSheet('experience'); src.closest('.job').open = true; src.scrollIntoView({ block: 'center' }); };
     dlg.showModal();
   };
   $$('[data-open]').forEach(b => b.onclick = () => openProj(b.dataset.open));
@@ -570,13 +595,13 @@ dialog::backdrop{background:rgba(30,47,36,.5);backdrop-filter:blur(3px)}
     const re = chip.dataset.match ? new RegExp(chip.dataset.match, 'i') : new RegExp('(^|[^A-Za-z])' + esc(chip.textContent) + '(?![A-Za-z])', 'i');
     let n = 0;
     projs.forEach(p => { const hit = re.test($('.tech', p).textContent); p.classList.toggle('hit', hit); p.classList.toggle('dim', !hit); if (hit) { n++; p.closest('.job').open = true; } });
-    status.innerHTML = `${n} project${n === 1 ? '' : 's'} used <b>${chip.textContent}</b> — highlighted below ↓ &nbsp;<button type="button">clear</button>`;
+    status.innerHTML = `${n} project${n === 1 ? '' : 's'} used <b>${chip.textContent}</b>, highlighted in <a href="#experience">Experience ↗</a> &nbsp;<button type="button">clear</button>`;
     $('button', status).onclick = clear;
   });
 
   // print: expand everything so the page works as a resume
   let wasOpen = [];
-  addEventListener('beforeprint', () => { wasOpen = $$('.job').map(j => j.open); $$('.job').forEach(j => j.open = true); });
+  addEventListener('beforeprint', () => { if (sheet.open) sheet.close(); wasOpen = $$('.job').map(j => j.open); $$('.job').forEach(j => j.open = true); });
   addEventListener('afterprint', () => $$('.job').forEach((j, i) => j.open = wasOpen[i]));
 })();
 </script>
